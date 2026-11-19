@@ -1,0 +1,24 @@
+# The gate as a workflow file (GitHub Actions, as of November 2026).
+# Offline: recorded runs only, no model, no secret, no network after install.
+name: evals
+on:
+  pull_request:            # on every change
+  schedule:
+    - cron: "30 20 * * *"  # nightly, 20:30 UTC (02:00 IST)
+  workflow_dispatch:       # and by hand
+permissions:
+  contents: read
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      # each action is pinned by commit (v7.0.1 and v9.0.0)
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9
+        with:
+          python-version: "3.12"
+      - run: uv sync --frozen
+      - name: Ship rule (exit code 1 stops the change)
+        run: >-
+          uv run --frozen python
+          09-evals-that-keep-running/03-gates-and-ship-rules/solution/gate.py

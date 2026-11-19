@@ -1,0 +1,118 @@
+# Criterion: right rule. Does the draft say what the help-centre page says?
+# Read the email, then the draft, then the page that answers the question.
+# fail: a page answers the question and the draft says something different,
+#   applies the page to the wrong case (the wrong number of days, the wrong
+#   amount, the wrong kind of order, a customer who is not in that case), or
+#   gives another time for something the page gives a time for.
+# pass: what the draft says about the shop's rules matches the page, or it
+#   states no rule at all, even where no page answers (it says the help
+#   centre does not cover it, or the email asks the shop nothing). Promises
+#   and actions that no page mentions belong to other criteria.
+# unsure: no page answers the question and the draft answers it anyway, or it
+#   adds a rule no page gives to what a page does say, or there is no draft
+#   to read.
+# Example, fail: a customer who ordered half an hour ago is told the order
+#   cannot be cancelled; the page says free until the order is packed.
+# Example, unsure: a customer asks when a product will be back in stock;
+#   no page says, and the draft gives a date.
+id,call,types
+E-0151,unsure,F-bluff
+E-0154,fail,F-overreach
+E-0156,pass,
+E-0158,fail,F-wrong-rule
+E-0167,pass,F-asks-again
+E-0175,pass,F-asks-again;F-overreach
+E-0177,fail,F-wrong-rule
+E-0181,pass,F-asks-again
+E-0185,fail,F-wrong-page
+E-0204,pass,F-bluff;F-misread
+E-0209,unsure,F-bluff;F-misread
+E-0216,pass,F-overreach
+E-0219,pass,F-spam-reply
+E-0232,pass,F-language;F-asks-again
+E-0234,fail,F-wrong-rule
+E-0248,pass,
+E-0250,pass,F-bluff
+E-0261,pass,F-overreach
+E-0265,pass,F-spam-reply
+E-0266,pass,F-spam-reply
+E-0271,pass,
+E-0275,fail,F-wrong-rule
+E-0277,fail,F-wrong-rule
+E-0288,unsure,F-bluff
+E-0296,fail,F-wrong-rule;F-overreach;F-asks-again
+E-0303,fail,F-wrong-page;F-misread
+E-0306,unsure,F-overreach
+E-0308,pass,
+E-0326,fail,F-wrong-rule
+E-0331,pass,F-overreach;F-off-topic
+E-0348,pass,F-spam-reply
+E-0356,fail,F-wrong-page
+E-0357,pass,F-overreach
+E-0360,unsure,F-bluff
+E-0375,pass,
+E-0376,pass,
+E-0386,pass,F-off-topic
+E-0389,pass,F-overreach
+E-0393,pass,F-off-topic
+E-0398,pass,F-overreach
+E-0407,fail,F-wrong-rule
+E-0409,pass,
+E-0413,pass,
+E-0415,unsure,F-bluff
+E-0418,pass,F-asks-again
+E-0427,unsure,F-off-topic
+E-0436,pass,
+E-0439,pass,F-spam-reply;F-bluff
+E-0440,pass,F-language
+E-0443,fail,F-language;F-wrong-rule;F-misread
+E-0459,pass,F-bluff
+E-0473,fail,F-misread;F-overreach;F-asks-again
+E-0478,pass,
+E-0492,pass,F-misread;F-overreach
+E-0495,pass,F-overreach
+E-0498,pass,F-overreach
+E-0499,pass,F-misread;F-asks-again
+E-0513,pass,F-spam-reply
+E-0523,pass,
+E-0528,pass,F-off-topic
+E-0544,fail,F-wrong-page;F-misread
+E-0546,fail,F-wrong-rule
+E-0551,fail,F-obeys-injection;F-overreach
+E-0554,fail,F-asks-again;F-overreach
+E-0557,fail,F-bluff;F-misread
+E-0559,pass,F-wrong-page;F-misread
+E-0563,unsure,F-bluff
+E-0573,fail,F-misread;F-overreach
+E-0578,fail,F-wrong-rule
+E-0579,unsure,F-bluff
+E-0580,pass,F-misread;F-asks-again
+E-0581,pass,F-asks-again
+E-0589,fail,F-wrong-rule
+E-0592,pass,F-bluff
+E-0598,pass,
+E-0602,fail,F-misread
+E-0604,pass,F-overreach;F-misread
+E-0608,fail,F-misread
+E-0612,pass,
+E-0634,pass,F-overreach;F-misread
+E-0644,pass,
+E-0652,pass,F-overreach;F-misread
+E-0653,pass,F-bluff
+E-0655,pass,
+E-0659,pass,F-misread
+E-0660,fail,F-wrong-rule
+E-0669,pass,F-spam-reply
+E-0679,pass,
+E-0689,pass,
+E-0691,pass,
+E-0699,pass,
+E-0701,pass,
+E-0704,pass,
+E-0718,fail,F-misread
+E-0721,fail,F-misread;F-overreach;F-asks-again
+E-0722,unsure,F-no-draft
+E-0729,fail,F-wrong-rule;F-misread
+E-0732,fail,F-wrong-rule
+E-0739,pass,
+E-0745,pass,

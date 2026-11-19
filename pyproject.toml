@@ -1,0 +1,34 @@
+[project]
+name = "ai-evals"
+version = "0.1.0"
+description = "Code and data for AI Evals: measuring Tidewater Goods' AI help desk, lesson by lesson."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "openai",
+    "httpx",
+    "pydantic",
+    "python-dotenv",
+    "numpy",
+    "rich",
+]
+
+# Extra tools, named for what they are used for: uv sync --extra tools
+[project.optional-dependencies]
+tests = ["pytest", "pytest-recording"]
+
+[tool.pytest.ini_options]
+addopts = "--tb=short"
+testpaths = ["helpdesk/tests", "scorecard/tests"]
+
+# A plain `uv sync` installs this group too, so `make check` works at once.
+[dependency-groups]
+dev = ["ai-evals[tests]"]
+
+# Installs helpdesk/ and scorecard/ into the environment, so both import from any folder.
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["helpdesk", "scorecard"]

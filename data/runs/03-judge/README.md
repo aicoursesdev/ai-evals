@@ -1,0 +1,11 @@
+# 03-judge: a model judge for "right rule", on the 100 coded drafts
+
+`right-rule.jsonl`: one record per coded draft (the 100 in `labels/01-coded.csv`): `id`, `prompt` (the full request), `reply` (the model's full text), `finish_reason`, `completion_tokens`, `seconds`, `model`, `settings`, `recorded_at`.
+
+- Made by: `cd 03-graders/06-llm-judges/solution && uv run --frozen python judge_rule.py --live` (needs Ollama). Without `--live` the same script replays this file and calls no model.
+- Model and settings: `qwen3.5:4b` through Ollama, thinking off (`reasoning_effort` none), temperature 0, `max_tokens` 1500, one request at a time, no retries.
+- The prompt gives the criterion "right rule" (pass, fail, unsure), three examples written for the prompt (none from the 100 drafts), the email, the three pages `hd-1` was shown (from `traces/hd-1/`) and the draft; it asks for at most three sentences of reasoning, then a last line with PASS, FAIL or UNSURE.
+- Recorded 19 November 2026, 17:48 to 17:55 IST. Count: 100 replies; every `finish_reason` is `stop` (none cut off by the limit); 4.1 seconds a request on average (410 seconds in all), 87 completion tokens on average, 184 at most.
+- 3 replies have no verdict on a line of their own (E-0261, E-0580 and E-0739 put PASS or UNSURE at the end of their last sentence); the script counts them as "no line" and does not guess.
+- Compared with `labels/03-right-rule-arjun.csv` by `03-graders/06-llm-judges/solution/compare_with_arjun.py`. Arjun's calls (61 pass, 29 fail, 10 unsure) start from a first guess read off the failure map by `03-graders/05-human-grading/solution/derive_arjun.py`; all 100 were then read against the rule, and the 22 that changed are in `labels/03-right-rule-changes.csv` with a reason each. The judge prompt carries the rule as first written; the rule was tightened after this recording.
+- Result: of Arjun's 29 fails the judge fails 14, passes 13 and says unsure on 2; of his 61 passes it passes 38, fails 12, says unsure on 8 and gives no line on 3; of his 10 unsure it says unsure on 6, passes 2 and fails 2. Where both gave pass or fail (77 drafts, leaving out unsure and the 3 replies with no line) they agree on 52; a marker that always said pass would agree on 50. A first look only: Module 04 measures a judge properly.

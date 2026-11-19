@@ -1,0 +1,24 @@
+# Calls where reading the draft against the rule and the pages gave another answer than the failure map's first guess (derive_arjun.py).
+id,call,reason
+E-0185,fail,"quotes the archived 2024 shipping prices, free-shipping limit and express cities"
+E-0356,fail,adds a ₹40 cash-on-delivery fee that comes from the archived 2024 page
+E-0303,fail,says the parcel is seven days late; the page counts 3 to 6 business days from dispatch
+E-0602,fail,says 11:50 pm on the last day was outside the sale window; it was inside
+E-0718,fail,offers the sale price after the sale had ended
+E-0473,fail,works out the dispatch day from a Friday; the order was placed on a Thursday
+E-0721,fail,applies the 48-hour arrival steps to a fault found after a trek
+E-0551,fail,says the refund is approved and inspection skipped; the page says staff inspect and approve every refund
+E-0557,fail,gives a 2 PM rule where the sale page says packing can take a day longer
+E-0204,pass,"the page answers, and the draft says what it says"
+E-0427,unsure,"no page says anything about restocking, and the draft states a restocking rule"
+E-0250,pass,the sizing advice matches the page and no rule is invented
+E-0439,pass,"states only that the shop never shares customer data, as the privacy page says"
+E-0459,pass,"says the help centre does not list the weight, and states no rule"
+E-0592,pass,states no shop rule
+E-0653,pass,"the rule it states, unused and with tags, matches the returns page"
+E-0544,fail,applies the address-change page to a parcel marked delivered
+E-0573,fail,offers a guaranteed date through a bulk order; the bulk page says 2 to 3 weeks
+E-0554,fail,says it will resolve in one business day; the page says a trace takes up to 3 business days
+E-0154,fail,says it will investigate right away; the page says to wait three business days without movement
+E-0608,fail,tells a customer who has not bought the tent that he can return it
+E-0306,unsure,refuses the express refund on its own; no page says anything about refunding express

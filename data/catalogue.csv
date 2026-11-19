@@ -1,0 +1,44 @@
+sku,name,category,price_inr,warranty_months,stock
+JKT-MONSOON-S,Monsoon Rain Jacket (S),jacket,3499,12,14
+JKT-MONSOON-M,Monsoon Rain Jacket (M),jacket,3499,12,22
+JKT-MONSOON-L,Monsoon Rain Jacket (L),jacket,3499,12,18
+JKT-MONSOON-XL,Monsoon Rain Jacket (XL),jacket,3499,12,9
+JKT-COASTAL-S,Coastal Light Shell (S),jacket,2299,12,11
+JKT-COASTAL-M,Coastal Light Shell (M),jacket,2299,12,16
+JKT-COASTAL-L,Coastal Light Shell (L),jacket,2299,12,13
+JKT-COASTAL-XL,Coastal Light Shell (XL),jacket,2299,12,0
+JKT-STORM-M,Storm Pro Jacket (M),jacket,6999,12,6
+JKT-STORM-L,Storm Pro Jacket (L),jacket,6999,12,4
+JKT-STORM-XL,Storm Pro Jacket (XL),jacket,6999,12,2
+BPK-COMMUTER-20,Monsoon Commuter Backpack 20 L,backpack,2799,12,25
+BPK-DRYTREK-25,DryTrek Waterproof Backpack 25 L,backpack,4299,12,17
+BPK-ROLLTOP-30,Roll-Top Waterproof Backpack 30 L,backpack,3999,12,12
+BPK-DRYTREK-40,DryTrek Waterproof Backpack 40 L,backpack,5999,12,8
+BPK-TREKKER-55,Ghats Trekker Backpack 55 L,backpack,8499,12,5
+TNT-SOLO-1,Solo Ultralight Tent (1-person),tent,11999,12,3
+TNT-COMPACT-2,Compact Monsoon Tent (2-person),tent,7499,12,7
+TNT-COMPACT-3,Compact Monsoon Tent (3-person),tent,9999,12,4
+TNT-FAMILY-4,Family Dome Tent (4-person),tent,14499,12,2
+DRY-BAG-5L,Roll-Top Dry Bag 5 L,dry-bag,599,0,40
+DRY-BAG-10L,Roll-Top Dry Bag 10 L,dry-bag,799,0,35
+DRY-BAG-20L,Roll-Top Dry Bag 20 L,dry-bag,1099,0,28
+DRY-BAG-30L,Roll-Top Dry Bag 30 L,dry-bag,1399,0,19
+SND-TREK-7,Trek Sandals (UK 7),sandals,1899,0,10
+SND-TREK-8,Trek Sandals (UK 8),sandals,1899,0,14
+SND-TREK-9,Trek Sandals (UK 9),sandals,1899,0,12
+SND-TREK-10,Trek Sandals (UK 10),sandals,1899,0,6
+BTL-INSUL-350,Insulated Bottle 350 ml (kids),bottle,749,0,30
+BTL-INSUL-500,Insulated Bottle 500 ml,bottle,999,0,45
+BTL-INSUL-750,Insulated Bottle 750 ml,bottle,1299,0,33
+BTL-INSUL-1000,Insulated Bottle 1 L,bottle,1599,0,20
+POU-PHONE-STD,Waterproof Phone Pouch,pouch,449,0,60
+POU-PHONE-XL,Waterproof Phone Pouch XL,pouch,549,0,38
+POU-WAIST,Waterproof Waist Pouch,pouch,899,0,22
+POU-DOC-A5,Waterproof Document Pouch A5,pouch,399,0,41
+ACC-PACK-COVER,Backpack Rain Cover (20 to 40 L),accessory,499,0,50
+ACC-TENT-FOOTPRINT-2,Tent Footprint (2-person),accessory,1199,0,15
+ACC-SEAM-SEALER,Seam Sealer 30 ml,accessory,349,0,44
+ACC-NAME-PATCH,Personalised Name Patch,accessory,349,0,120
+GFT-EGIFT-1000,"E-Gift Card ₹1,000",gift-card,1000,0,999
+GFT-EGIFT-2500,"E-Gift Card ₹2,500",gift-card,2500,0,999
+GFT-EGIFT-5000,"E-Gift Card ₹5,000",gift-card,5000,0,999

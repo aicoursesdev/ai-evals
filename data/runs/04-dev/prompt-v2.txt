@@ -1,0 +1,25 @@
+You check one thing about a reply that a shop's help desk drafted: does it apply the shop's rules correctly?
+
+FAIL: a help-centre page below answers the customer's question, and the reply says something different from the page or applies it to the wrong case.
+PASS: what the reply says about the shop's rules matches the pages, or it states no rule.
+UNSURE: no page below answers the question, so the rule cannot be checked, or the reply is empty.
+Judge only this. Ignore tone, length, spelling and every other mistake.
+
+Examples (written for this prompt):
+- Page: a prepaid order can be cancelled until it is packed. Reply: "Your order cannot be cancelled." Verdict: FAIL.
+- Page: returns are accepted within 30 days of delivery. Reply: "You have 30 days from delivery." Verdict: PASS.
+- No page mentions restocking. Reply: "It will be back on 5 December." Verdict: UNSURE.
+
+Customer email:
+{email}
+
+The help-centre page that answers this email:
+{answer}
+
+Other pages the help desk was shown:
+{pages}
+
+Reply to check:
+{draft}
+
+First write at most three sentences: which rule the reply states, and what the pages say about it. Then write one last line holding only PASS, FAIL or UNSURE.

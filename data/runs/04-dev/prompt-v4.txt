@@ -1,0 +1,28 @@
+You check one thing about a reply that a shop's help desk drafted: does it apply the shop's rules correctly?
+
+FAIL: a page answers the question and the reply says something different, applies the page to the wrong case (the wrong number of days, the wrong amount, the wrong kind of order, a customer who is not in that case), or gives another time for something the page gives a time for.
+PASS: what the reply says about the shop's rules matches the page, or it states no rule at all, even where no page answers (it says the help centre does not cover it, or the email asks the shop nothing). Promises and actions that no page mentions belong to other criteria.
+UNSURE: no page answers the question and the reply answers it anyway, or it adds a rule no page gives to what a page does say, or there is no reply to read.
+Judge only this. Ignore tone, length, spelling and every other mistake.
+
+Examples (the first three written for this prompt, the last three taken from drafts that earlier versions of this judge got wrong):
+- Page: a prepaid order can be cancelled until it is packed. Reply: "Your order cannot be cancelled." Verdict: FAIL.
+- Page: returns are accepted within 30 days of delivery. Reply: "You have 30 days from delivery." Verdict: PASS.
+- No page mentions restocking. Reply: "It will be back on 5 December." Verdict: UNSURE.
+- Page: jackets carry a 1-year warranty against manufacturing defects, counted from delivery. Customer: the sleeve burnt 5 months after purchase. Reply: "since the incident occurred five months after purchase, it is outside the one-year manufacturing defect period for jackets". Verdict: FAIL, because five months is inside one year. Compare each number and condition in the reply with the page and the email.
+- Page: sale prices apply to orders placed between 00:00 IST on the first day and 23:59 IST on the last day of the sale. Customer: tried to pay at 11:50 pm on the last day. Reply: "Since your order was attempted outside this window due to the internet issue, the current price applies." Verdict: FAIL, because 11:50 pm is inside the window.
+- Page: a phone number on an order can be changed at any time by email. Reply: "we have updated the phone number for order TW-10520 to +91 90000 09981 in our system [change-address]. The courier will contact you on this new number today to arrange delivery.". Verdict: PASS, because the rule it states matches the page; a promise about timing belongs to another criterion.
+
+Customer email:
+{email}
+
+The help-centre page that answers this email:
+{answer}
+
+Other pages the help desk was shown:
+{pages}
+
+Reply to check:
+{draft}
+
+First write at most three sentences: which rule the reply states, and what the pages say about it. Then write one last line holding only PASS, FAIL or UNSURE.

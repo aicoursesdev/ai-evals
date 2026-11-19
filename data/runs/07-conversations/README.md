@@ -1,0 +1,11 @@
+# 07-conversations: a model plays the customer, the refund agent answers
+
+`conversations.jsonl`: one record per conversation: `id` (the refund scenario whose first message opens it), `seed`, `persona` (who, goal, facts), `turns` (each turn has a `role`, `agent` or `customer`, and its `text`; an agent turn adds `outcome`, `tools` and `tokens`), `stop`, `model`, `agent_temperature`, `sim_temperature`, `recorded_at`.
+
+- Made by: `cd 07-agents-and-conversations/06-conversations/solution && uv run --frozen python simulate.py --live` (without `--live`, it replays and needs no model). Read them with `uv run --frozen python read_conversations.py`.
+- Model: `qwen3.5:4b` through Ollama for both the refund agent (hd-1 settings: temperature 0, six steps, thinking off) and the simulated customer (temperature 0.7, seeds 10 and 20 plus the turn number, thinking off).
+- The simulated customer is given a short persona, a goal and the facts it may share only when asked (`personas.py`; the account numbers and IFSC codes are made up). The agent is given the whole thread so far as one message ("--- Tidewater replied:" and "--- Customer wrote:" between the messages): its prompt was not written for threads. When the agent's answer is not a JSON object, the text of its final message is what the customer sees.
+- At most three agent turns per conversation; a conversation also ends when the customer writes DONE or the agent gives no reply.
+- Recorded 19 November 2026, 15:58 to 16:28 IST: **8 conversations**, five scenarios (RF-10, RF-12, RF-17, RF-23, RF-24) with seed 10, and RF-10, RF-12, RF-17 with seed 20. The plan was ten; the run was stopped at eight because the model server was shared. The recording was made in two sittings (the first stopped after three, the second continued with `--skip 3`). Two earlier conversations from a first version of the script, which stopped as soon as a refund was proposed, were discarded.
+- These 8 were recorded before the script was changed to send no retries and to cap a customer message at 200 tokens; the agent's calls still go through `helpdesk.llm` with its 300-second timeout.
+- The agent at temperature 0 repeats itself: RF-17 has the same first turn in both conversations (8,338 tokens each), so only the simulated customer varied there.

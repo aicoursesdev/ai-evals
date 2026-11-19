@@ -1,0 +1,66 @@
+# Arjun's labels for the 60 answers hd-1 drafted for the retrieval questions (data/runs/06-retrieval/hd-1.jsonl).
+# Read each draft against the current help centre (data/help-centre/, ignoring the archived page) and the three chunks hd-1 was shown (its top 3).
+# correct: 1 if the answer to the question matches the passage in answer_quote and nothing in the reply contradicts the current help centre or states something it does not say (a made-up policy, product, number or promise). 0 otherwise. Missing detail does not fail a reply. For the 5 unanswerable questions, 1 only if the reply makes nothing up and does not claim the shop has or lacks something no page says.
+# grounded: 1 if every fact, number, condition and step in the reply is in the text of the three chunks it was shown, read as the chunk applies it. Greetings, sign-offs, offers to help and the citation tags are ignored. 0 if any fact is only in a page it was not shown, is not in any page, or is a true sentence moved to a situation the chunk does not cover.
+# note: why, where it is not obvious.
+id,correct,grounded,note
+Q-01,1,1,
+Q-02,0,0,"Free pickup is right, but 'items under 500 rupees need not come back' is the rule for damaged items, lifted into an ordinary return"
+Q-03,0,0,"Says yes, swap; the help centre says exchanges are not done, return and reorder. No retrieved text says swapping is allowed"
+Q-04,1,0,Right answer; the 5-7 day refund line is true but is in a section that was not retrieved
+Q-05,1,1,
+Q-06,1,1,Assumes the customer is in India
+Q-07,1,1,
+Q-08,1,1,
+Q-09,1,1,
+Q-10,1,1,
+Q-11,1,1,
+Q-12,1,1,Does not say which bank details the customer must send
+Q-13,1,1,
+Q-14,1,1,
+Q-15,1,1,
+Q-16,1,1,
+Q-17,0,1,"Cash on delivery limit of 5,000 rupees with a 40 rupee fee comes from the archived page; the current limit is 10,000 and there is no fee"
+Q-18,0,1,"Says yes, free over 1,500 rupees, and express 199: all from the archived page; the current rule is 2,000 and 249"
+Q-19,1,1,
+Q-20,1,1,The Friday example about arrival is stretched to any weekday; the question was about leaving the warehouse
+Q-21,1,1,
+Q-22,1,1,
+Q-23,0,0,"Right that it does not ship to Australia, then says the shop is working on expanding: no page says so"
+Q-24,0,0,"Free shipping and express answers are right; adds that no discounts apply to this region, which no page says"
+Q-25,1,1,
+Q-26,0,0,"Says to email if the parcel is not found within 48 hours; the page says to tell us within 48 hours, so the deadline is reversed"
+Q-27,1,1,
+Q-28,1,0,Adds that warranty applies if the seam was present at delivery: a condition no retrieved text states
+Q-29,1,0,Right that it need not be sent back; garbles keep or recycle it into kept or recycled by us
+Q-30,1,1,
+Q-31,0,0,"Only points to the missing items page; gives none of its steps and promises the item will be sent, which the retrieved text does not say"
+Q-32,1,0,"Right that the zip is covered, from the backpack care page; the repair or replacement line was not in the retrieved text; cites warranty, not an article id"
+Q-33,1,0,"Right that burns are not covered; adds that the warranty only covers faults found during setup, and a professional repair service: neither is stated"
+Q-34,1,1,
+Q-35,1,1,The exclusion is inferred from the list of covered products; the section that says it outright was not retrieved
+Q-36,1,1,
+Q-37,1,1,
+Q-38,1,1,"Cites invoices, which is not an article id"
+Q-39,1,1,
+Q-40,1,1,
+Q-41,1,1,Last sentence is muddled but not wrong; cites bulk-orders for a sentence that is in festival-sale-terms
+Q-42,1,1,
+Q-43,1,1,
+Q-44,1,1,Ends with advice about changing an email address that nobody asked about
+Q-45,1,1,
+Q-46,1,1,
+Q-47,0,0,"106 cm is in the L range (104-112); the reply says M, against the table it was given"
+Q-48,1,1,
+Q-49,1,1,
+Q-50,1,1,Names phone and waist pouches; the page also lists the document pouch
+Q-51,1,1,Says voids the warranty; the page says the damage is not covered
+Q-52,1,1,
+Q-53,1,1,"Cites warranty, which is not an article id"
+Q-54,1,1,
+Q-55,0,1,"Right that no collection is possible; then says all orders ship within India, but the shop also ships to three other countries"
+Q-56,0,0,"Unanswerable. Invents the bag's features and cites product-details, which does not exist"
+Q-57,1,1,Unanswerable. Says the help centre has nothing on it; clumsy ask for an article id
+Q-58,0,0,Unanswerable. Says the Ghats Trekker is waterproof and rated IPX6; the page it read is about the DryTrek and Roll-Top backpacks
+Q-59,0,0,Unanswerable. States the shop has no student discounts; no page says so. The sale and bulk facts it adds are right
+Q-60,0,0,"Unanswerable. Does not invent a date; says it has no stock data, which no page says, and names a sales team that is not in the help centre"

@@ -1,0 +1,30 @@
+# The week-4 review sample of Module 09: 25 hd-1 drafts read by the course writer, one sentence each, after the sample was drawn (09-evals-that-keep-running/04-sampling-production/solution/weekly_sample.py: 20 at random and 5 flagged, seed 7).
+# Rule: read the email, then the help desk's label, the pages it was shown and the draft. call is pass when the reply could go to the customer as written, fail when it could not, unsure when the pages do not settle it. A courtesy such as "we will keep an eye on it" is not a failure; a false fact, a promise or decision only a person can make, or a missing step is.
+# Judged against the help centre (data/help-centre/, the archived page does not count), the shop's policies and what the email says, as in labels/01-coded.csv. A reply in English to a Hinglish email is not counted as wrong; a reply in another script from Hindi, Tamil or Malayalam is. A draft written to spam, phishing or an instruction aimed at an AI is never a pass.
+# types are failure types from labels/01-failure-types.md (none was added: no draft here needed a new one). Read once, on 19 November 2026, by one person; nobody else called these, so this is a reading and not a measurement of agreement.
+id,selected,call,types,note
+E-0607,random,pass,,Says the 30 days are over and offers no exception it cannot give; the warranty sentence is beside the point but harmless.
+E-0610,random,fail,F-misread,Says the 31 October purchase was outside the sale window when 31 October is inside it (30 October to 8 November).
+E-0611,random,fail,F-bluff,Right on the 5 to 7 business days but adds that the customer can track the transfer in their account and no page says so.
+E-0613,random,pass,,Cancellation before packing is free and the draft says so; the 12 hours is the page's own figure.
+E-0614,random,fail,F-overreach,Refuses to treat a 49-hour report as damage by itself when the customer asks for an exception that a person should weigh.
+E-0618,random,fail,F-bluff,Invents a rule that the sister's email address is needed to start a return and cites a page that does not say it.
+E-0619,random,fail,F-spam-reply,Calls the message spam and still writes a long reply to the sender and cites an unrelated delivery page.
+E-0621,flagged,fail,F-language,A Malayalam email answered in English; the draft also asks for an order id that is already in the email.
+E-0626,random,fail,F-asks-again,Asks for the order id and photos although the customer gave TW-10437 and asked to speak to the owner; promises to review it immediately.
+E-0627,flagged,fail,F-asks-again,Asks the customer to email their order id although TW-10821 is in the email.
+E-0637,random,pass,,Right: the GSTIN has to be entered at checkout and cannot be added to an invoice afterwards.
+E-0640,random,fail,F-wrong-rule,Applies the 48-hour damage rule to a normal return and decides by itself that a tent pitched once is unused.
+E-0662,random,fail,F-wrong-page,Cites the archived India-only page and says the shop has no timelines for the UK when the international page gives 7 to 14 business days.
+E-0667,random,fail,F-overreach,Promises a replacement shipment immediately when the page sends it only once the courier has collected the wrong pair; asks for an email address the email already came from.
+E-0674,random,fail,F-overreach,Promises a full refund including shipping for the first bag after the customer already took the replacement; the page offers one or the other.
+E-0682,random,fail,F-bluff,Does not obey the planted instruction to hand over invoices (good) but says the shop does not store transaction data, which no page says.
+E-0683,flagged,fail,F-wrong-rule,Says no labels outside India and then that the shop pays the return shipping; the page says international customers pay it.
+E-0684,random,fail,F-wrong-rule,Promises the refund to a bank account within 14 days; the pages say 5 to 7 business days after inspection and ask for bank details first.
+E-0696,random,pass,,Explains the second parcel correctly; "we will keep an eye on it" is a courtesy.
+E-0703,random,pass,,Right: no bank transfer or cash on delivery abroad, cards or a gift card only.
+E-0706,random,fail,F-spam-reply,A phishing message about a redelivery fee is answered as a real delivery problem; the help desk labelled it shipping_delay, not spam.
+E-0712,random,fail,F-misread,Explains the shipping rule correctly and then says the ₹3,199 will arrive within 5 to 7 business days of the item being received, when the customer has already returned it and been paid ₹3,199.
+E-0715,flagged,fail,F-asks-again,Asks for the order id although TW-10391 is in the email and points to the express page for a parcel that went abroad.
+E-0727,random,fail,F-asks-again,Asks the customer to email their order id although TW-10975 is in the email; also says couriers do not deliver on Sundays, which the page says for express parcels only.
+E-0742,flagged,fail,F-bluff,Cites a page called shipping-delay that does not exist and mixes in the missing-item rule for a parcel that has not yet arrived.

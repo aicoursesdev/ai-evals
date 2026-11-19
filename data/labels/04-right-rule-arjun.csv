@@ -1,0 +1,119 @@
+# Criterion: right rule. Does the draft say what the help-centre page says?
+# Read the email, then the draft, then the page that answers the question.
+# fail: a page answers the question and the draft says something different,
+#   applies the page to the wrong case (the wrong number of days, the wrong
+#   amount, the wrong kind of order, a customer who is not in that case), or
+#   gives another time for something the page gives a time for.
+# pass: what the draft says about the shop's rules matches the page, or it
+#   states no rule at all, even where no page answers (it says the help
+#   centre does not cover it, or the email asks the shop nothing). Promises
+#   and actions that no page mentions belong to other criteria.
+# unsure: no page answers the question and the draft answers it anyway, or it
+#   adds a rule no page gives to what a page does say, or there is no draft
+#   to read.
+# Example, fail: a customer who ordered half an hour ago is told the order
+#   cannot be cancelled; the page says free until the order is packed.
+# Example, unsure: a customer asks when a product will be back in stock;
+#   no page says, and the draft gives a date.
+# The 100 cases are logged emails drawn at random with random.Random(4).sample from the 450 log emails in neither the open nor the sealed part of the test set (ids in 04-judge-set-ids.json), and were called in id order from the email, the recorded draft and the help-centre pages before any judge was run on them.
+id,call,reason
+E-0157,fail,"The track-order page gives 7–14 business days only for international parcels, but the draft applies it to a parcel going to Patna, and adds a 48-hour replacement limit that the page ties to delivery, not to a lost parcel."
+E-0165,pass,The account-and-password page says a reset link works for 30 minutes and once; the draft says the same and sends the customer to Forgot password.
+E-0169,fail,"The draft cites monsoon delays from the archived 2024 shipping page and tells the customer to wait two more business days, where the track-order page says to write after 3 business days with no movement."
+E-0180,pass,The refunds page says to write after 7 business days for the bank's reference; the draft says that and that refunds go back to the same account.
+E-0182,pass,The warranty-claims page covers poles that fail during normal setup in the first year; the draft says the warranty covers it and offers repair or replacement.
+E-0190,pass,"The account-and-password page gives a 15-minute lock after 5 wrong passwords, a 30-minute single-use reset link and the guest note; the draft states all three correctly."
+E-0194,pass,The cancel-order page says a Placed prepaid order can be cancelled for free and refunded within 5–7 business days; the draft says so and gives the Orders button and the email route.
+E-0201,pass,The international-shipping page says duties are paid to the courier and cannot be quoted in advance; the draft says the customer may have to pay and that the amount depends on customs.
+E-0205,pass,"The payment-methods page makes EMI available from ₹3,000 on credit cards; the draft says ₹2,299 is below that and lists the other ways to pay."
+E-0206,fail,"The draft applies the express-delivery page's two-business-day rule to an order with a ₹99 standard shipping fee, which is the wrong kind of order."
+E-0207,unsure,"No page covers free products or collaborations, and the draft states a rule that the shop does not offer them."
+E-0214,fail,"The express-delivery page gives 1–2 business days after a Monday dispatch, but the draft says to expect the parcel by Friday or Monday."
+E-0217,pass,"The backpack-care page rates the DryTrek IPX6 for heavy rain with a dry bag for under water, and the draft says that; its remark about rain covers not being in stock is a fact, not a rule."
+E-0240,unsure,"The track-order page answers the 3 to 6 days question and the draft matches it, but it adds that the shop's policy does not cover delays, which no page says."
+E-0245,unsure,"The tent-setup page says only that the footprint is sold separately; no page says whether it is needed, and the draft answers that it is highly recommended."
+E-0249,pass,"The waterproof-ratings page puts the Storm Pro at 20,000 mm and the Monsoon at 10,000 mm and the express-delivery page includes Mumbai; the draft's advice and its express remark agree with them."
+E-0252,pass,"The refunds page says a refund takes 5–7 business days after inspection, goes back to the card on EMI and the bank closes the plan; the draft says the same."
+E-0256,fail,"The draft blames monsoon delays on North India routes, which comes from the archived 2024 shipping page and says nothing about Lucknow; the current page only gives 3–6 business days."
+E-0259,pass,The privacy page says to email from the account address for a copy of the data and that the shop replies within 30 days; the draft says both.
+E-0263,fail,"The draft applies the bulk-orders page about returning more than ten items to a customer who never said the order was bulk, where the returns-policy page promises a pickup within 3 business days."
+E-0270,pass,"The festival-sale-terms page gives 30 October to 8 November, 20% off everything but gift cards, no price matching and a return-and-rebuy option; the draft states these correctly."
+E-0272,pass,The cod-refunds page gives 5–7 business days after inspection and the returns-policy page gives free pickup within 3 business days; the draft states both and states nothing against them.
+E-0276,fail,"The returns-policy page says pickup in India is free, but the draft tells a customer in Pune that the shop does not offer home pickup."
+E-0283,fail,"The track-order page says orders are packed within 12 hours, but the draft tells a customer who ordered on Tuesday and writes on Saturday that the order is Packed and will leave within 12 hours."
+E-0287,pass,The returns-policy and refunds pages give a free courier pickup in India and a refund 5–7 business days after the item reaches the warehouse; the draft says both.
+E-0294,fail,"The refunds page starts the 5–7 business days when the return reaches the warehouse and passes inspection, but the draft says they start when the courier collects the item from the warehouse."
+E-0295,fail,"The draft applies the backpack-care page's three folds for DryTrek and Roll-Top backpacks to a dry bag, which is the wrong kind of item, while the damaged-or-wrong-item part matches."
+E-0302,unsure,"No page says whether a size will be in stock, and the draft answers by telling the customer to check the size guide to confirm M is in stock."
+E-0305,pass,The festival-sale-terms page refuses a refund of the difference for a purchase before the sale and offers a return and rebuy; the draft says both.
+E-0314,pass,The cancel-order page lets a guest cancel by email until the order is packed and refunds a prepaid order; the draft says so and says the money goes back to the original method.
+E-0315,fail,"The draft applies the payment-methods page's failed-payment reversal to a payment that succeeded, and tells the customer to write after two days where the track-order page says 3 business days."
+E-0316,unsure,"No page says whether the DryTrek 25 L has a laptop sleeve, and the draft states that it has a padded compartment for 14 inches."
+E-0321,pass,The festival-sale-terms and gift-cards pages say gift cards are never discounted; the draft says so.
+E-0323,pass,"The cancel-order page says an order can be cancelled until it is packed and the festival-sale-terms page says sale stock is not reserved until you pay; the draft says both, with an action claim added that belongs to another criterion."
+E-0325,pass,The payment-methods page says the bank reverses a failed payment in 5–7 business days and the shop traces it from the UTR; the draft says both.
+E-0332,unsure,"No page gives the pouch sizes, and the draft states that the XL pouch fits a 6.9-inch phone in a case."
+E-0333,pass,"The jacket-size-guide page gives the Coastal as slim, 100 cm as M, and a larger size for layers; the draft says all three."
+E-0334,pass,The email asks the shop nothing and the draft states no shop rule that a page contradicts.
+E-0340,pass,The bulk-orders page gives 5% for 10 to 24 of one product and no combining with festival prices; the draft says both.
+E-0342,pass,"The draft says it can help with the change and gives the jacket-size-guide fit advice and the return option, and states no rule against the cancel-order page (hard: it never says to cancel and reorder)."
+E-0343,unsure,"No page covers sandal grip, and the draft states that the sole has deep lugs for wet rocks."
+E-0346,pass,"The festival-sale-terms page gives the sale window, no refund of the difference and a return and rebuy; the draft states these correctly."
+E-0347,fail,"The festival-sale-terms page puts the Diwali sale on 30 October to 8 November, but the draft gives 18 to 27 August as the sale dates."
+E-0361,fail,"The draft applies the cancel-order page's refund from the day of cancelling to a return, where the refunds page counts 5–7 business days from the item reaching the warehouse."
+E-0369,pass,The email asks the shop nothing and the draft states no shop rule that a page contradicts.
+E-0373,fail,"The draft quotes standard delivery of 4–7 business days and express at ₹199 for 2–3 days from the archived 2024 page, where the current page says 3–6 days and ₹249 for 1–2 days."
+E-0383,pass,"The festival-sale-terms page gives 20% off everything but gift cards, rounded down, no code; the draft says so for the bottles and the pouch."
+E-0387,unsure,"The cancel-order page only covers cancelling or changing a size or address, and the draft invents that the shop can manually remove one item and asks for a phone call."
+E-0396,unsure,"No page covers buying gift cards for someone else, and the draft states that only the buyer can purchase them (hard)."
+E-0412,unsure,"No page covers reviews, and the draft states that the website has no review feature."
+E-0420,pass,The jacket-size-guide page lists S to XL with 120 cm as the top chest; the draft says there is no XXL and gives the 30-day return from returns-policy.
+E-0423,pass,The email asks the shop nothing and the draft states no shop rule that a page contradicts.
+E-0433,unsure,"No page says whether shipping is refunded on a normal return, and the draft states that it is refunded only for damaged, wrong or missing items."
+E-0442,fail,"The privacy page says the shop will not discuss an order with anyone but the address on it, but the draft invites a husband to get his wife's order history and addresses by writing from his own address."
+E-0448,fail,"The draft applies the damaged-or-wrong-item page's 48 hours and warranty claim to a jacket worn once to check the fit, where the returns-policy page asks for unused items."
+E-0452,pass,The cancel-order page says a Placed order can be cancelled for free from Orders or by email; the draft says so.
+E-0454,pass,The payment-methods page says to email both references after 7 business days and the shop refunds the extra charge; the draft says the same.
+E-0463,fail,"The track-order page says to write after 3 business days with no movement, but the draft says to wait only another day after the first 24 hours before writing."
+E-0468,pass,"The damaged-or-wrong-item page says to tell the shop within 48 hours with a photo of the wrong item and its label, and the draft says so."
+E-0474,pass,"The international-shipping page gives 7–14 business days for the UAE and no express abroad, and the draft says both, with a loose remark on two weeks."
+E-0475,pass,"The express-delivery page says an order cannot be switched to express after it is placed but can be cancelled and reordered if still Placed, and gives ₹249 for Delhi; the draft says so."
+E-0479,pass,The warranty-claims and tent-setup pages cover a pole failing during setup with a repair or replacement; the draft says so.
+E-0496,pass,"The payment-methods page says to wait 7 business days for the bank's reversal and then email the UTR; the draft says so, with an invented remark about double payment."
+E-0497,fail,"The shipping-india page gives 3–6 business days for standard delivery, but the draft tells the customer to expect the parcel by the end of the week."
+E-0505,fail,"The shipping-india page gives free shipping over ₹2,000 and the gap from ₹1,839 is ₹161, but the draft says ₹171 more."
+E-0506,unsure,"No page says whether shipping is refunded on a normal return, and the draft states that it is refunded only for damaged, wrong or missing items."
+E-0516,pass,The contact-us page promises a reply within one business day and the track-order page covers a parcel that has not moved; the draft states no rule against them.
+E-0517,unsure,"The track-order page says to write when a parcel is past its delivery time and gives a replacement or refund when it is lost, but the draft adds that a delay alone earns a replacement or refund."
+E-0526,pass,The damaged-or-wrong-item and missing-item pages promise a check and a reply within one business day; the draft says so and states no rule against them.
+E-0527,pass,The draft asks for one business day to investigate and states no rule against the track-order page.
+E-0533,pass,The email asks the shop nothing and the draft states no shop rule that a page contradicts.
+E-0542,pass,The cancel-order page lets a Placed order be cancelled from Orders or by email for a guest; the draft says so.
+E-0555,pass,The tent-setup page says to dry a tent fully within 24 hours; the draft says so.
+E-0562,pass,"The draft says the help centre has no sizing for the sandals and gives the 30-day return from returns-policy, stating no rule against a page."
+E-0567,fail,"The payment-methods page gives 10 minutes to approve a UPI request, but the draft says the link timed out after 20 minutes."
+E-0586,pass,"The change-address page lets the address change while the order is Placed, by email with the new address and a phone number; the draft says so."
+E-0587,pass,The track-order page says the first scan can take 24 hours; the draft says so and states nothing against a page.
+E-0590,pass,The track-order page says the first scan can take 24 hours and large orders can ship in more than one parcel; the draft says both.
+E-0591,pass,The email asks the shop nothing and the draft states no shop rule that a page contradicts.
+E-0593,fail,"The privacy page says the shop never shares one customer's details with another, but the draft gives another customer's address, mobile number and items."
+E-0596,pass,"The payment-methods page says a second charge is usually a failed payment that reverses, and to email both references after 7 business days; the draft says so."
+E-0600,pass,The festival-sale-terms page puts 23:59 on the last day inside the sale and the draft says so; the customer's claim that the price had already changed is a dispute of fact (hard).
+E-0616,fail,"The returns-policy page counts 30 days until the item reaches the warehouse, but the draft calls the customer eligible on day 30 by booking the pickup that day."
+E-0617,fail,"The track-order page says to write after 3 business days with no movement, but the draft explains five days of silence as the 24 hours a first scan can take."
+E-0631,unsure,"The account-and-password page says to check spam and the address, but the draft adds a wait of 30 minutes and a name, phone and order ID step that the page gives for another case."
+E-0633,pass,The draft promises an answer today and states no shop rule against a page.
+E-0643,fail,"The returns-policy page allows 30 days, but the draft says a jacket delivered four weeks ago is outside it; four weeks is 28 days."
+E-0651,pass,The festival-sale-terms page says sale stock is limited and not reserved until you pay; the draft says so.
+E-0672,pass,"The refunds page says refunds always go to the way you paid, and to write after 7 business days for the bank's reference; the draft says both."
+E-0677,pass,The damaged-or-wrong-item page offers a replacement or a refund for a wrong item; the draft offers both.
+E-0688,pass,The payment-methods and cancel-order pages cover two paid orders with a refund in 5–7 business days; the draft says that and separates it from a failed payment.
+E-0702,fail,"The refunds page counts the refund from the return reaching the warehouse, but the draft applies the payment-methods page's failed-payment and double-charge rules to a return refund."
+E-0707,pass,The gift-cards page says gift cards cannot be returned or refunded; the draft says so.
+E-0710,fail,"The cancel-order page says to cancel and place a new order to change a size, but the draft says the size can be changed directly without cancelling."
+E-0717,pass,"The returns-policy page gives the Return an item button, the guest email route and a free pickup within 3 business days in India; the draft says so."
+E-0725,unsure,"No page covers how many SMS messages are sent or whether they can be reduced, and the draft states how the shop sends them."
+E-0726,pass,The cancel-order page lets a Placed order be cancelled from Orders or by email; the draft says so.
+E-0735,pass,"The privacy page gives 8 years for orders, 2 years for messages and until deletion for the account, with a reply within 30 days; the draft says so."
+E-0736,pass,The returns-policy page accepts an unused item within 30 days with a free pickup in India; the draft says so.
+E-0741,pass,The refunds page says refunds always go to the way you paid; the draft refuses the new account on that basis.
